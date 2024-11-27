@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics and Probability</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <style> 
+
+    /* Styling buttons */
+    button {
+        background-color: #ff6f91; /* Pink background */
+        color: white; /* White text */
+        border: none;
+        padding: 10px 15px;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        align-content: center;
+        transition: background-color 0.3s ease; /* Smooth transition */
+    }
+    input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ff6f91;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    justify-content: center;
+    box-sizing: border-box; /* Ensures padding doesn't increase overall width */
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #e91e63;
+    box-shadow: 0 0 5px rgba(233, 30, 99, 0.3);
+    justify-content: center;
+}
+
+/* Ensure consistent styling on different devices */
+@media (max-width: 600px) {
+    input[type="text"] {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 300px; /* Prevent extremely wide inputs on very small screens */
+    }
+}
+    button:hover {
+        background-color: #e91e63; /* Darker pink on hover */
+    }
+
+    /* Feedback messages */
+    p {
+    text-align: left;
+}h3 {
+    text-align: left;
+}
+        /* General Reset */
+        body {
+            font-family: Arial, sans-serif;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        /* Container for the sections */
+        .container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+
+        /* Styling for each section box */
+        section {
+            margin-bottom: 20px; /* Adds space between sections */
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        /* Styling for the headings */
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+      
+
+        /* Styling for each section box */
+        section {
+            margin-bottom: 20px; /* Adds space between sections */
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+            margin: 20px auto;
+            max-width: 1700px;
+        }
+
+      
+        /* Header Styling */
+        header {
+            background-color: #ff6f91;;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #fff;
+        }
+
+    
+
+        .navbar {
+            background-color: #ff3b61; /* Darker pink */
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .navbar ul li a {
+    font-size: 1rem; /* Adjust this value to change the size of the menu text */
+}
+        .navbar a:hover {
+            background-color: #c90043; /* Deep red-pink */
+        }
+
+        /* Section Styling */
+        section {
+            padding: 40px;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(245, 243, 243, 0.1);
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            color: #e91e63;
+            justify-content: center;
+            
+        }
+
+
+      /* Style the video link */
+      .video-link {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1.2em;
+        padding: 10px 10px;
+        border-radius: 5px;
+        background-color: #ff6f91;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        text-align: center; /* Centers the text inside the link */
+        justify-content: center;
+    }
+    
+   
+    
+    /* Hover effect */
+    .video-link:hover {
+        background-color: #ff3b61;
+        justify-content: center;
+    }
+        section h3 {
+            font-size: 1.2rem;
+            color: #e91e63;
+            justify-content: center;
+        }
+
+        section p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+.container {
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.doors {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.door {
+  margin: 0 10px;
+}
+
+button {
+  margin-top: 20px;
+}
+        
+        .doors {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .door {
+            width: 80px;
+            height: 150px;
+            background-color: #ffcccb;
+            border: 4px solid #ff3b61;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+            position: relative;
+        }
+
+        .door:hover {
+            transform: scale(1.1);
+        }
+
+        .door.open {
+            background-color: #90ee90;
+            transform: rotateY(180deg);
+        }
+
+        .door .number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: none;
+        }
+
+        .result.success {
+            color: #4caf50;
+        }
+
+        .result.fail {
+            color: #f44336;
+        }
+
+        button {
+            background-color: #ff3b61;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #e91e63;
+        }       
+        /* Footer Styling */
+       /* Footer */
+       
+        .game-output {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .game-correct {
+            color: #4caf50; /* Green for correct */
+        }
+
+        .game-incorrect {
+            color: #f44336; /* Red for incorrect */
+        }
+        .chart-container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        #tooltip {
+            position: absolute;
+            display: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+            pointer-events: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Statistics and Probability: Central Tendency and Counting Principles</h1>
+    </header>
+
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Calculator.html">Calculator</a></li>
+            <li><a href="Members.html">Members</a></li>
+        </ul>
+        
+    </div> <section>
+        <section id="central-tendency" class="topic-section">
+            <h2>Measures of Central Tendency (Ungrouped Data)</h2>
+            <div class="measure">
+              <h3>Mean</h3>
+            <p><strong>Definition:</strong> The mean is the sum of all data points divided by the number of data points.</p>
+            <p><strong>Formula:</strong> <em>Mean = (Σx) / n</em></p>
+            <p><strong>Example:</strong> If the data points are 5, 7, and 9, the mean is (5 + 7 + 9) / 3 = 7.</p>
+    
+            <!-- Mean Chart -->
+            <div class="chart-container">
+                <h4>Mean - Interactive Chart</h4>
+                <div id="meanChart"></div>
+            </div>
+        </div>
+    
+        <!-- Median Explanation and Chart -->
+        <div class="measure" class="topic-section">
+            <h3>Median</h3>
+            <p><strong>Definition:</strong> The median is the middle value when the data points are arranged in ascending order.</p>
+            <p><strong>Steps to Find:</strong>
+                <ol>
+                    <p><lu>Arrange the data in order.</lu></p>
+                   <p><lu>If there is an odd number of data points, the median is the middle value.</lu></p>
+                <p> <lu>If there is an even number of data points, the median is the average of the two middle values.</lu></p>
+                </ol>
+            </p>
+            <p><strong>Example:</strong> Data set: 3, 7, 9. The median is 7.</p>
+    
+            <!-- Median Chart -->
+            <div class="chart-container" >
+                <h4>Median - Interactive Chart</h4>
+                <div id="medianChart"></div>
+            </div>
+        </div>
+    
+        <!-- Mode Explanation and Chart -->
+        <div class="measure">
+            <h3>Mode</h3>
+            <p><strong>Definition:</strong> The mode is the data point that appears most frequently in a set.</p>
+            <p><strong>How to Identify:</strong> Look for the value that repeats the most.</p>
+            <p><strong>Example:</strong> In the data set 1, 2, 2, 3, 3, 3, the mode is 3.</p>
+    
+            <!-- Mode Chart -->
+            <div class="chart-container">
+                <h4>Mode - Interactive Chart</h4>
+                <div id="modeChart"></div>
+            </div>
+        </div>
+    
+        <!-- Plotly.js library -->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script>
+            // Example data set
+            const dataSet = [5, 7, 9, 10, 10, 12, 15, 17, 20, 22, 22, 22, 30];
+    
+            // Mean Calculation
+            const mean = dataSet.reduce((a, b) => a + b) / dataSet.length;
+    
+            // Median Calculation
+            const sortedData = [...dataSet].sort((a, b) => a - b);
+            const median = (sortedData[Math.floor((sortedData.length - 1) / 2)] + sortedData[Math.ceil((sortedData.length - 1) / 2)]) / 2;
+    
+            // Mode Calculation
+            const modeMap = {};
+            let maxCount = 0;
+            let mode = [];
+            dataSet.forEach(num => {
+                if (modeMap[num] == null) modeMap[num] = 1;
+                else modeMap[num]++;
+                if (modeMap[num] > maxCount) {
+                    maxCount = modeMap[num];
+                    mode = [num];
+                } else if (modeMap[num] === maxCount) {
+                    mode.push(num);
+                }
+            });
+    
+            // Mean Chart
+            const meanChartData = {
+                x: dataSet,
+                y: Array(dataSet.length).fill(1),
+                type: 'scatter',
+                mode: 'markers',
+                marker: { color: 'rgba(54, 162, 235, 0.7)', size: 10 },
+                name: 'Data Points'
+            };
+    
+            const meanLine = {
+                x: [mean, mean],
+                y: [0, 1],
+                type: 'scatter',
+                mode: 'lines',
+                line: { color: 'red', dash: 'dash' },
+                name: 'Mean'
+            };
+    
+            const meanLayout = {
+                title: 'Mean: Data Points with Mean Line',
+                xaxis: { title: 'Data Points' },
+                yaxis: { title: 'Frequency' },
+                showlegend: true,
+                hovermode: 'closest'
+            };
+    
+            Plotly.newPlot('meanChart', [meanChartData, meanLine], meanLayout);
+    
+            // Median Chart
+            const medianLine = {
+                x: [median, median],
+                y: [0, 1],
+                type: 'scatter',
+                mode: 'lines',
+                line: { color: 'green', dash: 'dash' },
+                name: 'Median'
+            };
+    
+            const medianLayout = {
+                title: 'Median: Data Points with Median Line',
+                xaxis: { title: 'Data Points' },
+                yaxis: { title: 'Frequency' },
+                showlegend: true,
+                hovermode: 'closest'
+            };
+            Plotly.newPlot('medianChart', [meanChartData, medianLine], medianLayout);
+    
+            // Mode Chart
+            const modeLines = mode.map(m => ({
+                x: [m, m],
+                y: [0, 1],
+                type: 'scatter',
+                mode: 'lines',
+                line: { color: 'purple', dash: 'dash' },
+                name: 'Mode (' + m + ')'
+            }));
+    
+            const modeLayout = {
+                title: 'Mode: Data Points with Mode Lines',
+                xaxis: { title: 'Data Points' },
+                yaxis: { title: 'Frequency' },
+                showlegend: true,
+                hovermode: 'closest'
+            };
+    
+            Plotly.newPlot('modeChart', [meanChartData, ...modeLines], modeLayout);
+        </script>
+        </section>
+    <section id="counting-principle" class="topic-section">
+        <h2>Fundamental Counting Principle</h2>
+        <p><strong>Explanation:</strong> This principle states that if one event can occur in <em>m</em> ways and a second event can occur in <em>n</em> ways, then the two events can occur in <em>m × n</em> ways.</p>
+        <p><strong>Example:</strong> Choosing an outfit with 3 shirts and 2 pants can be done in 3 × 2 = 6 ways.</p>
+    </section>
+
+    <section id="permutations"class="topic-section">
+        <h2>Permutations</h2>
+        <p><strong>Definition:</strong> A permutation is an arrangement of objects in a specific order.</p>
+        <p><strong>Formula:</strong> <em>P(n, r) = n! / (n - r)!</em></p>
+        <p><strong>Example:</strong> Arranging 3 objects from 5: P(5, 3) = 5! / (5 - 3)! = 60.</p>
+        <section class="probability-section">
+            <!-- Link to YouTube video -->
+            <a href="https://youtu.be/g4p9SmVD0Xo?si=ZI_EAftN_r_rn6kd" target="_blank" class="video-link">Tap here to watch the video and enjoy!</a>
+        </section>
+    </section>
+
+    <section id="combinations" class="topic-section">
+        <h2>Combinations</h2>
+        <p><strong>Definition:</strong> A combination is a selection of items where the order does not matter.</p>
+        <p><strong>Formula:</strong> <em>C(n, r) = n! / (r! × (n - r)!)</em></p>
+        <p><strong>Example:</strong> Choosing 2 players from 5: C(5, 2) = 5! / (2! × 3!) = 10.</p>
+        <section class="probability-section">
+            <!-- Link to YouTube video -->
+            <a href="https://youtu.be/NyX8aLJs_y4?si=k4bUlSxu2x867MQY" target="_blank" class="video-link">Tap here to watch the video and enjoy!</a>
+        </section>    </section>
+        <section id="practice" class="topic-section">
+            <h2>Practice Problems</h2>
+            
+            <div class="problem" class="topic-section">
+                <h3>1. Calculate the Mean:</h3>
+                <p>Data: 10, 15, 20, 25, 30. Find the mean.</p>
+                <input type="text" id="mean-answer" placeholder="Enter your answer">
+                <button onclick="checkMean()">Submit</button>
+                <p id="mean-feedback"></p>
+            </div>
+        
+            <div class="problem">
+                <h3>2. Find the Median:</h3>
+                <p>Data: 2, 4, 6, 8, 10. Find the median.</p>
+                <input type="text" id="median-answer" placeholder="Enter your answer">
+                <button onclick="checkMedian()">Submit</button>
+                <p id="median-feedback"></p>
+            </div>
+        
+            <div class="problem">
+                <h3>3. Find the Mode:</h3>
+                <p>Data: 1, 2, 2, 3, 4, 4, 4. Find the mode.</p>
+                <input type="text" id="mode-answer" placeholder="Enter your answer">
+                <button onclick="checkMode()">Submit</button>
+                <p id="mode-feedback"></p>
+            </div>
+        
+            <div class="problem">
+                <h3>4. Apply the Fundamental Counting Principle:</h3>
+                <p>There are 4 shirts and 3 pants. How many different outfits can be formed?</p>
+                <input type="text" id="counting-answer" placeholder="Enter your answer">
+                <button onclick="checkCounting()">Submit</button>
+                <p id="counting-feedback"></p>
+            </div>
+        
+            <div class="problem">
+                <h3>5. Calculate Permutations:</h3>
+                <p>How many ways can you arrange 4 books from a shelf of 6 books?</p>
+                <input type="text" id="permutations-answer" placeholder="Enter your answer">
+                <button onclick="checkPermutations()">Submit</button>
+                <p id="permutations-feedback"></p>
+            </div>
+        
+            <div class="problem">
+                <h3>6. Calculate Combinations:</h3>
+                <p>How many ways can you choose 3 players from a team of 7?</p>
+                <input type="text" id="combinations-answer" placeholder="Enter your answer">
+                <button onclick="checkCombinations()">Submit</button>
+                <p id="combinations-feedback"></p>
+            </div>
+        </section>
+        
+        <script>
+            function checkMean() {
+                const answer = document.getElementById("mean-answer").value;
+                const feedback = document.getElementById("mean-feedback");
+                if (answer == "20") {
+                    feedback.textContent = "Correct! The mean is 20.";
+                    feedback.style.color = "#e91e63";
+                } else {
+                    feedback.textContent = "Incorrect. Try again!";
+                    feedback.style.color = "#ff6f91";
+                }
+            }
+        
+            function checkMedian() {
+                const answer = document.getElementById("median-answer").value;
+                const feedback = document.getElementById("median-feedback");
+                if (answer == "6") {
+                    feedback.textContent = "Correct! The median is 6.";
+                    feedback.style.color = "#e91e63";
+                } else {
+                    feedback.textContent = "Incorrect. Try again!";
+                    feedback.style.color = "#ff6f91";
+                }
+            }
+        
+            function checkMode() {
+                const answer = document.getElementById("mode-answer").value;
+                const feedback = document.getElementById("mode-feedback");
+                if (answer == "4") {
+                    feedback.textContent = "Correct! The mode is 4.";
+                    feedback.style.color = "#e91e63";
+                } else {
+                    feedback.textContent = "Incorrect. Try again!";
+                    feedback.style.color = "#ff6f91";
+                }
+            }
+        
+            function checkCounting() {
+                const answer = document.getElementById("counting-answer").value;
+                const feedback = document.getElementById("counting-feedback");
+                if (answer == "12") {
+                    feedback.textContent = "Correct! There are 12 outfits.";
+                    feedback.style.color = "#e91e63";
+                } else {
+                    feedback.textContent = "Incorrect. Try again!";
+                    feedback.style.color = "#ff6f91";
+                }
+            }
+        
+            function checkPermutations() {
+                const answer = document.getElementById("permutations-answer").value;
+                const feedback = document.getElementById("permutations-feedback");
+                if (answer == "360") {
+                    feedback.textContent = "Correct! The number of permutations is 360.";
+                    feedback.style.color = "#e91e63";
+                } else {
+                    feedback.textContent = "Incorrect. Try again!";
+                    feedback.style.color = "#ff6f91";
+                }
+            }
+        
+            function checkCombinations() {
+                const answer = document.getElementById("combinations-answer").value;
+                const feedback = document.getElementById("combinations-feedback");
+                if (answer == "35") {
+                    feedback.textContent = "Correct! The number of combinations is 35.";
+                    feedback.style.color = "#e91e63";
+                } else {
+                    feedback.textContent = "Incorrect. Try again!";
+                    feedback.style.color = "#ff6f91";
+                }
+            }
+        </script>
+     
+
+    <!-- Added Real-Life Applications Section -->
+    <section id="real-life-applications" class="topic-section">
+        <h2>Real-Life Applications: Play and Learn</h2>
+ 
+        <div class="container">
+            <h1>Probability Game</h1>
+            <h2>Choose a Door and Test Your Luck!</h2>
+            
+            <div class="doors">
+                <div class="door" id="door1" onclick="chooseDoor(1)">
+                    <span class="number">1</span>
+                </div>
+                <div class="door" id="door2" onclick="chooseDoor(2)">
+                    <span class="number">2</span>
+                </div>
+                <div class="door" id="door3" onclick="chooseDoor(3)">
+                    <span class="number">3</span>
+                </div>
+            </div>
+    
+            <p class="result" id="result"></p>
+            <button onclick="resetGame()">Play Again</button>
+        </div>
+    
+        <script>
+            let winningDoor = Math.floor(Math.random() * 3) + 1;
+            let gameOver = false;
+    
+            function chooseDoor(doorNumber) {
+                if (gameOver) return; // Prevent multiple choices
+                gameOver = true;
+    
+                const result = document.getElementById("result");
+    
+                // Loop through all doors to show the result visually
+                for (let i = 1; i <= 3; i++) {
+                    const door = document.getElementById(`door${i}`);
+                    const number = door.querySelector(".number");
+    
+                    if (i === winningDoor) {
+                        door.classList.add("open");
+                        number.style.opacity = "0";
+                    }
+    
+                    // Check if the player chose the correct door
+                    if (doorNumber === winningDoor) {
+                        result.textContent = `Congratulations! Door ${doorNumber} was the winning door! 🎉`;
+                        result.className = "result success";
+                    } else {
+                        result.textContent = `Oops! Door ${winningDoor} was the winner. Better luck next time!`;
+                        result.className = "result fail";
+                    }
+                }
+    
+                // Show result
+                result.style.display = "block";
+            }
+    
+            function resetGame() {
+                // Reset variables
+                winningDoor = Math.floor(Math.random() * 3) + 1;
+                gameOver = false;
+    
+                // Reset UI
+                document.getElementById("result").style.display = "none";
+                for (let i = 1; i <= 3; i++) {
+                    const door = document.getElementById(`door${i}`);
+                    const number = door.querySelector(".number");
+    
+                    door.classList.remove("open");
+                    number.style.opacity = "1";
+                }
+            }
+   
+
+
+        function playGame() {
+            // Randomly determine the winning door (1, 2, or 3)
+            const winningDoor = Math.floor(Math.random() * 3) + 1;
+            const userChoice = parseInt(document.getElementById("door-choice").value);
+            const output = document.getElementById("game-output");
+
+            // Check if the user chose the correct door
+            if (userChoice === winningDoor) {
+                output.textContent = `Congratulations! You chose Door ${userChoice}, and it's the winning door! 🎉`;
+                output.className = "game-output game-correct";
+            } else {
+                output.textContent = `Sorry, you chose Door ${userChoice}. The winning door was Door ${winningDoor}. Better luck next time!`;
+                output.className = "game-output game-incorrect";
+            }
+        }
+        
+    </script>
+
+<script>
+
+
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  section.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+}
+
+    <footer>
+        <p>&copy; 2024 Statistics and Probability Education</p>
+    </footer></script>
+</body>
+</html>
+    
